@@ -12,7 +12,7 @@ A Python tool that summarizes video content by extracting audio, transcribing it
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 3.11.11 (required for compatibility)
 - FFmpeg (required for audio extraction)
 - Ollama installed and running locally (https://ollama.ai)
 
@@ -24,15 +24,21 @@ A Python tool that summarizes video content by extracting audio, transcribing it
    cd video-summarizer
    ```
 
-2. Set up the environment:
+2. Install Python 3.11.11:
+   ```bash
+   # On macOS using Homebrew
+   brew install python@3.11
+   ```
 
-   ### Option 1: Using uv (Recommended - Faster)
+3. Set up the environment:
+
+   ### Using uv (Recommended - Faster)
    ```bash
    # Install uv if you haven't already
    curl -LsSf https://astral.sh/uv/install.sh | sh
 
-   # Create and activate virtual environment
-   python -m venv .venv
+   # Create and activate virtual environment with Python 3.11
+   uv venv -p 3.11 .venv
    source .venv/bin/activate  # On Unix/macOS
    # or
    .venv\Scripts\activate  # On Windows
@@ -41,10 +47,10 @@ A Python tool that summarizes video content by extracting audio, transcribing it
    uv pip install -r requirements.txt
    ```
 
-   ### Option 2: Using pip
+   ### Using pip (Alternative)
    ```bash
    # Create and activate virtual environment
-   python -m venv .venv
+   python3.11 -m venv .venv
    source .venv/bin/activate  # On Unix/macOS
    # or
    .venv\Scripts\activate  # On Windows
@@ -53,7 +59,7 @@ A Python tool that summarizes video content by extracting audio, transcribing it
    pip install -r requirements.txt
    ```
 
-3. Install and start Ollama:
+4. Install and start Ollama:
    ```bash
    # Install Ollama from https://ollama.ai
    # Start the Ollama service
